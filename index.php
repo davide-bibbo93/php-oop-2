@@ -109,14 +109,14 @@ class PremiumUser extends User
 {
   protected $deliveryDays = 3;
 
-  protected $monthlySubscription;
+  protected $passMonth;
 
-  public function setSubscription($subscriptionPrice) {
-    $this->monthlySubscription = $subscriptionPrice;
+  public function setPass($passPrice) {
+    $this->passMonth = $passPrice;
   }
 
-  public function getMonthlySubscription() {
-    return $this->monthlySubscription;
+  public function getPassMonth() {
+    return $this->passMonth;
   }
 }
 
@@ -192,14 +192,14 @@ class Product
 // CLASSE LIBRO ESTESA A PRODOTTO
 class Book extends Product
 {
-  protected $pagesNum;
+  protected $pages;
 
-  public function setPagesNum($num) {
-    $this->pagesNum = $num;
+  public function setPages($number) {
+    $this->pages = $number;
   }
 
-  public function getPagesNum() {
-    return $this->pagesNum;
+  public function getPages() {
+    return $this->pages;
   }
 }
 
@@ -239,7 +239,7 @@ echo "<br>";
 
 // SEZIONE LIBRO
 $book= new Book(10, 'L\'Ombra Del Vento', 'Carlos Ruiz Zafón', 10.50);
-$book->setPagesNum(420);
+$book->setPages(420);
 
 echo "<b>Object Book: </b>";
 echo "<br><br>";
@@ -251,7 +251,7 @@ echo "<br><br>";
 echo '<em>Author: </em> ' . $book->getAuthor() . '<br>';
 echo '<em>Title: </em> ' . $book->getTitle() . '<br>';
 echo '<em>Price: </em> ' . $book->getPrice() . '<br>';
-echo '<em>Pages: </em> ' . $book->getPagesNum();
+echo '<em>Pages: </em> ' . $book->getPages();
 
 echo "<br><br>";
 
