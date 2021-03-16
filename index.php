@@ -237,19 +237,6 @@ echo '<em>Email: </em> ' . $user->getEmail() . '<br>';
 
 echo "<br>";
 
-if (count($user->getPurchasedProducts()) > 0) {
-  echo $user->getPurchasedProducts();
-} else {
-  echo 'No purchase. <br>';
-}
-if (count($user->getCards()) > 0) {
-  echo $user->getCards();
-} else {
-  echo 'No credit card.  ';
-}
-
-echo "<br><br>";
-
 // SEZIONE LIBRO
 $book= new Book(10, 'L\'Ombra Del Vento', 'Carlos Ruiz Zafón', 10.50);
 $book->setPagesNum(420);
@@ -299,6 +286,8 @@ try {
   echo $e->getMessage();
 }
 
+echo "<br>";
+
 // DATI CON ACQUISTO LIBRO
 
 echo "<b>After purchase : </b>";
@@ -316,6 +305,7 @@ if (count($user->getPurchasedProducts()) > 0) {
   print_r($user->getPurchasedProducts());
   echo '<br>';
 } else {
+  echo '<br>';
   echo 'No purchase. <br>';
 }
 if (count($user->getCards()) > 0) {
@@ -324,5 +314,6 @@ if (count($user->getCards()) > 0) {
   echo '<br>';
   print_r($user->getCards());
 } else {
+  echo '<br>';
   echo 'No credit card.';
 }
